@@ -39,6 +39,9 @@
                                 <state key="normal" title="Roll">
                                     <color key="titleColor" red="1" green="0.99215686270000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LUy-in-HEK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -46,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="diceImageView1" destination="VhC-Iv-iaJ" id="qsK-xc-zou"/>
+                        <outlet property="diceImageView2" destination="aXd-vx-zd9" id="VXP-gV-TBD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
