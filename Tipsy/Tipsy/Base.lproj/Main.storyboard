@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="Kks-Ri-nSd">
             <objects>
-                <viewController id="nyh-5V-cgv" sceneMemberID="viewController">
+                <viewController id="nyh-5V-cgv" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4il-RY-GEX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -250,6 +250,9 @@
                                 <state key="normal" title="Recalculate">
                                     <color key="titleColor" red="0.97254901959999995" green="1" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="nyh-5V-cgv" eventType="touchUpInside" id="scM-JG-W9z"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="1" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
@@ -265,6 +268,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i7W-ko-ZQ9"/>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="C6E-BG-zkr" id="113-b5-zLL"/>
+                        <outlet property="totalLabel" destination="9yr-ER-Ujt" id="0fo-vK-F0T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOb-3S-EPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
