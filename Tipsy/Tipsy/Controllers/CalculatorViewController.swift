@@ -19,6 +19,7 @@ class CalculatorViewController: UIViewController {
     var tip = 0.10
     var numberOfPeople = 2
     var billTotal = 0.0
+    var finalResult = "0.0"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +69,24 @@ class CalculatorViewController: UIViewController {
             let result = billTotal * (1 + tip) / Double(numberOfPeople)
             
             //Round the result to 2 decimal places and turn it into a String.
-            let resultTo2DecimalPlaces = String(format: "%.2f", result)
+            finalResult = String(format: "%.2f", result)
+        }
+        
+        //In Main.storyboard there is a segue between CalculatorVC and ResultsVC with the identifier "goToResults".
+        //This line triggers the segue to happen.
+        self.performSegue(withIdentifier: "goToResults", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //If the currently triggered segue is the "goToResults" segue.
+        if segue.identifier == "goToResults" {
+            //Get hold of the instance of the destination VC and type cast it to a ResultViewController.
+            let destinationVC = segue.destination as! ResultsViewController
             
-            print(resultTo2DecimalPlaces)
+            //Set the destination ResultsViewController's properties.
+            destinationVC.result = finalResult
+            destinationVC.tip = Int(tip * 100)
+            destinationVC.split = numberOfPeople
         }
     }
 }
