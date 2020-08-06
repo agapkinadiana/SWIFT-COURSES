@@ -18,6 +18,7 @@ class CalculatorViewController: UIViewController {
     
     var tip = 0.10
     var numberOfPeople = 2
+    var billTotal = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ class CalculatorViewController: UIViewController {
     }
  
     @IBAction func tipChanged(_ sender: UIButton) {
+        //Dismiss the keyboard when the user chooses one of the tip values.
+        billTextField.endEditing(true)
+        
         zeroPctButton.isSelected = false
         tenPctButton.isSelected = false
         twentyPctButton.isSelected = false
@@ -52,7 +56,22 @@ class CalculatorViewController: UIViewController {
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
-        print(numberOfPeople)
+        //Get the text the user typed in the billTextField
+        let bill = billTextField.text!
+        
+        if bill != "" {
+            //Turn the bill from a String e.g. "123.50" to an actual String with decimal places.
+            //e.g. 125.50
+            billTotal = Double(bill)!
+            
+            //Multiply the bill by the tip percentage and divide by the number of people to split the bill.
+            let result = billTotal * (1 + tip) / Double(numberOfPeople)
+            
+            //Round the result to 2 decimal places and turn it into a String.
+            let resultTo2DecimalPlaces = String(format: "%.2f", result)
+            
+            print(resultTo2DecimalPlaces)
+        }
     }
 }
 
