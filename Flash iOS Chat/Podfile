@@ -1,0 +1,12 @@
+ platform :ios, '13.0'
+
+target 'Flash iOS Chat' do
+  use_frameworks!
+
+  # Pods for Flash iOS Chat
+
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  
+
+end
