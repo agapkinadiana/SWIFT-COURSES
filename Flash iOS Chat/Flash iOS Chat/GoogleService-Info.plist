@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>250038055566-9uvek6ikdqir6c9b5nklotofjg9t25ac.apps.googleusercontent.com</string>
+	<string>938525577071-vdv1cs617drlo71u531f77qib67gmblt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.250038055566-9uvek6ikdqir6c9b5nklotofjg9t25ac</string>
+	<string>com.googleusercontent.apps.938525577071-vdv1cs617drlo71u531f77qib67gmblt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAD-VrZHMrrXFcSXOFd1l6LpaF4ts2fPto</string>
+	<string>AIzaSyDFM6xj7eVu3wv5nd_6ID-izsCYx65RdQs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>250038055566</string>
+	<string>938525577071</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.diana.Flash-iOS-Chat</string>
 	<key>PROJECT_ID</key>
-	<string>flash-ios-chat-3e6e0</string>
+	<string>flash-ios-chat-fca13</string>
 	<key>STORAGE_BUCKET</key>
-	<string>flash-ios-chat-3e6e0.appspot.com</string>
+	<string>flash-ios-chat-fca13.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:250038055566:ios:e180f0f43aea480f7e8fdf</string>
+	<string>1:938525577071:ios:fe35a9e498ccb5e3e7a29a</string>
 	<key>DATABASE_URL</key>
-	<string>https://flash-ios-chat-3e6e0.firebaseio.com</string>
+	<string>https://flash-ios-chat-fca13.firebaseio.com</string>
 </dict>
 </plist>
