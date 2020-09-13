@@ -35,7 +35,9 @@ class ChatViewController: UIViewController {
     func loadMessages() {
         messages = []
         
-        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.dateField)
+            .addSnapshotListener { (querySnapshot, error) in
             
             self.messages = []
              
@@ -64,7 +66,8 @@ class ChatViewController: UIViewController {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
             db.collection(Constants.FStore.collectionName).addDocument(data: [
                 Constants.FStore.senderField: messageSender,
-                Constants.FStore.bodyField: messageBody
+                Constants.FStore.bodyField: messageBody,
+                Constants.FStore.dateField: Date().timeIntervalSince1970
             ]) { (error) in
                 if let error = error {
                     print("Error adding document: \(error)")
