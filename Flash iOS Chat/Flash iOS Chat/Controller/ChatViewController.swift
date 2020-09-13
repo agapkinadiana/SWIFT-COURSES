@@ -35,7 +35,10 @@ class ChatViewController: UIViewController {
     func loadMessages() {
         messages = []
         
-        db.collection(Constants.FStore.collectionName).getDocuments { (querySnapshot, error) in
+        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
+            
+            self.messages = []
+             
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
             } else {
@@ -61,7 +64,7 @@ class ChatViewController: UIViewController {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
             db.collection(Constants.FStore.collectionName).addDocument(data: [
                 Constants.FStore.senderField: messageSender,
-                Constants.FStore.bodyField:messageBody
+                Constants.FStore.bodyField: messageBody
             ]) { (error) in
                 if let error = error {
                     print("Error adding document: \(error)")
