@@ -22,3 +22,18 @@ myCar.colour = "Blue"
 
 let yourCar = Car.singletonCar
 print(yourCar.colour)
+
+class A {
+    init() {
+        Car.singletonCar.colour = "Orange"
+    }
+}
+
+class B {
+    init() {
+        print(Car.singletonCar.colour)
+    }
+}
+
+let a = A()
+let b = B()
